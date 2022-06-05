@@ -1,8 +1,7 @@
 const redirectCurrentTabToUrl = (tab, url) => {
     //let readyToUpdate = true;
     chrome.webNavigation.onCommitted.addListener(
-        function updateOnCommitted(){
-            console.log('update')
+        function updateOnCommitted() {
             chrome.tabs.update(tab.id, { url });
             chrome.webNavigation.onCommitted.removeListener(updateOnCommitted);
         }

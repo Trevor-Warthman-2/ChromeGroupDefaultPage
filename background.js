@@ -6,8 +6,7 @@ chrome.runtime.onInstalled.addListener(async () => {
     if (tab.groupId !== -1) {
       const groupDefaultUrl = await getTabGroupDefault(tab.groupId);
       if (groupDefaultUrl && groupDefaultUrl !== tab.url && groupDefaultUrl !== tab.pendinguUrl) {
-        console.log('redir')
-        await redirectCurrentTabToUrl(tab, groupDefaultUrl);
+        redirectCurrentTabToUrl(tab, groupDefaultUrl);
       }
     }
   });

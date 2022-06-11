@@ -28,4 +28,8 @@ const getCurrentTabGroupId = async () => {
     return tab.groupId;
 }
 
-export { redirectCurrentTabToUrl, getTabGroupDefault, getCurrentTab, getCurrentTabGroupId, getStore };
+const openNewOptionsTab = () => {
+    chrome.tabs.create({ url: './options.html'});
+}
+
+export { redirectCurrentTabToUrl, getTabGroupDefault, getCurrentTab, getCurrentTabGroupId, getStore, openNewOptionsTab };

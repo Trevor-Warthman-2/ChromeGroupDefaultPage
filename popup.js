@@ -5,5 +5,9 @@ document.querySelector('#goToOptions').addEventListener('click', openNewOptionsT
 
 async function setCurrentPageToDefaultForGroup() {
   const tab = await getCurrentTab();
-  await chrome.storage.sync.set({ [tab.groupId]: tab.url });
+  if (tab.groupId === -1) {
+    alert('This tab is not in a group!');
+  } else {
+    await chrome.storage.sync.set({ [tab.groupId]: tab.url });
+  }
 }

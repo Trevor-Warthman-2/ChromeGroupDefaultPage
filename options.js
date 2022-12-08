@@ -1,3 +1,30 @@
+import { getTabGroups, getAllSavedDefaults } from utilities;
+
+const appendSavedDefaults = (tabGroups) => {
+  for (item in groups) {
+    document.append soem shit
+  }
+}
+
+const appendEmptyMessage = () => {
+  document. append stuff
+}
+
+const populateDefaultsList = () => {
+  const savedDefaults = getAllSavedDefaults();
+  if (tabGroups) {
+    appendSavedDefaults(tabGroups);
+  } else {
+    appendEmptyMessage();
+  }
+}
+get tab groups
+const groupListContainer = document.getElementById('defaultTabGroupsList');
+
+
+
+populateDefaultsList();
+
 /*document.querySelector('#button').addEventListener('click', await setCurrentPageToDefaultForGroup());
 
 

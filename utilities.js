@@ -1,8 +1,11 @@
 const redirectCurrentTabToUrl = (tab, url) => {
     //let readyToUpdate = true;
     chrome.webNavigation.onCommitted.addListener(
-        function updateOnCommitted() {
-            chrome.tabs.update(tab.id, { url });
+        async function updateOnCommitted() {
+            console.log(tab)
+            await chrome.tabs.update(tab.id, { url }, () => {
+                alert('your default tab has been updated.')
+            });
             chrome.webNavigation.onCommitted.removeListener(updateOnCommitted);
         }
     );
@@ -11,9 +14,13 @@ const redirectCurrentTabToUrl = (tab, url) => {
 const getStore = async () => {
     return await chrome.storage.sync.get();
 }
+
+const getAllSavedDefaults = async () => {
+    return await getStore();
+}
   
 const getTabGroupDefault = async (groupId) => {
-    const store = await getStore();
+    const store = await getAllSavedDefaults();
     return store[groupId];
 }
 
@@ -32,4 +39,4 @@ const openNewOptionsTab = () => {
     chrome.tabs.create({ url: './options.html'});
 }
 
-export { redirectCurrentTabToUrl, getTabGroupDefault, getCurrentTab, getCurrentTabGroupId, getStore, openNewOptionsTab };
+export { redirectCurrentTabToUrl, getTabGroupDefault, getCurrentTab, getCurrentTabGroupId, getAllSavedDefaults, openNewOptionsTab };

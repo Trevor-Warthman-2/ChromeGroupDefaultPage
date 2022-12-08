@@ -1,0 +1,10 @@
+@import "./master.css";
+
+body {
+    width: 200px;
+    height: 300px;
+}
+
+button#setAsDefault {
+    background-color: var(--button-background-color);
+}

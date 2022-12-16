@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Group Default Page",
+  "version": "0.1",
+  "description": "Some Description",
+  "permissions": [
+  ],
+  "background": {
+    "service_worker": "/static/js/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Popup",
+    "default_icon": {
+      "16": "/assets/images/groupDefaultLogoV1-16.png",
+      "32": "/assets/images/groupDefaultLogoV1-32.png",
+      "48": "/assets/images/groupDefaultLogoV1-48.png",
+      "128": "/assets/images/groupDefaultLogoV1-128.png"
+    }
+  },
+  "icons": {
+    "16": "/assets/images/groupDefaultLogoV1-16.png",
+    "32": "/assets/images/groupDefaultLogoV1-32.png",
+    "48": "/assets/images/groupDefaultLogoV1-48.png",
+    "128": "/assets/images/groupDefaultLogoV1-128.png"
+  },
+  "options_page": "options.html"
+}

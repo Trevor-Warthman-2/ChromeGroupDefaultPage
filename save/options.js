@@ -1,6 +1,6 @@
-import { getTabGroups, getAllSavedDefaults } from utilities;
+import { getTabGroups, getAllGroupDefaults } from utilities;
 
-const appendSavedDefaults = (tabGroups) => {
+const appendGroupDefaults = (tabGroups) => {
   for (item in groups) {
     document.append soem shit
   }
@@ -11,9 +11,9 @@ const appendEmptyMessage = () => {
 }
 
 const populateDefaultsList = () => {
-  const savedDefaults = getAllSavedDefaults();
+  const groupDefaults = getAllGroupDefaults();
   if (tabGroups) {
-    appendSavedDefaults(tabGroups);
+    appendGroupDefaults(tabGroups);
   } else {
     appendEmptyMessage();
   }
